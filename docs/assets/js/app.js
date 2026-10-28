@@ -9,7 +9,8 @@
 
     var DATA = window.PORTAL_DATA || { datasets: [], variables: [], keywords: [], sites: [] };
     var UPSTREAM_RAW_BASE = 'https://raw.githubusercontent.com/beyond-1234/sdsu-data-panel/gh-pages/';
-    var UPSTREAM_REPO_URL = 'https://github.com/beyond-1234/sdsu-data-panel';
+    var DEFAULT_RAW_BASE = 'https://raw.githubusercontent.com/email-clm/sdsu-data-panel/gh-pages/';
+    var DEFAULT_REPO_URL = 'https://github.com/email-clm/sdsu-data-panel';
     var DATA_BRANCH = 'gh-pages';
 
     function detectRepoCoordinates(hostname, pathname) {
@@ -25,13 +26,13 @@
     var REPO_COORDS = detectRepoCoordinates();
 
     function repoRawBase() {
-        if (!REPO_COORDS) return UPSTREAM_RAW_BASE;
+        if (!REPO_COORDS) return DEFAULT_RAW_BASE;
         return 'https://raw.githubusercontent.com/' + REPO_COORDS.owner + '/' +
             REPO_COORDS.repo + '/' + DATA_BRANCH + '/';
     }
 
     function githubRepoUrl() {
-        if (!REPO_COORDS) return UPSTREAM_REPO_URL;
+        if (!REPO_COORDS) return DEFAULT_REPO_URL;
         return 'https://github.com/' + REPO_COORDS.owner + '/' + REPO_COORDS.repo;
     }
 
@@ -936,7 +937,7 @@
             footerRepo.href = githubRepoUrl();
             footerRepo.textContent = REPO_COORDS
                 ? REPO_COORDS.owner + '/' + REPO_COORDS.repo
-                : 'beyond-1234/sdsu-data-panel';
+                : 'email-clm/sdsu-data-panel';
         }
 
         populateFilters();

@@ -4,7 +4,7 @@ A pure client-side scientific data portal for global soil microbial and carbon-c
 datasets. The published site is hosted on GitHub Pages and requires no Flask server,
 database, or other backend at runtime.
 
-Live site: **https://beyond-1234.github.io/sdsu-data-panel/**
+Live site: **https://email-clm.github.io/sdsu-data-panel/**
 
 ## Repository layout
 
